@@ -6,7 +6,7 @@
 #    By: beboccas <beboccas@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/15 16:01:00 by beboccas          #+#    #+#              #
-#    Updated: 2024/09/18 15:23:45 by beboccas         ###   ########.fr        #
+#    Updated: 2024/09/21 03:36:40 by beboccas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC		=	srcs/so_long.c \
 			srcs/map_utils.c \
 			srcs/player_utils.c \
 			srcs/draw_map.c \
+			srcs/draw_map_utils.c \
 			srcs/init.c \
 			srcs/init_map.c \
 			srcs/init_utils.c \

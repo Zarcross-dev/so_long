@@ -6,7 +6,7 @@
 /*   By: beboccas <beboccas@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 16:00:55 by beboccas          #+#    #+#             */
-/*   Updated: 2024/09/18 15:38:54 by beboccas         ###   ########.fr       */
+/*   Updated: 2024/09/21 03:35:42 by beboccas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,7 @@ void	free_coins(t_coins *coins);
 int		free_structs(t_data *data);
 void	update_frame(t_data *data, int frame);
 int		valid_map(t_data *data);
+char	*safe_itoa(t_data *data, int n);
 
 
 #endif // SO_LONG_H

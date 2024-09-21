@@ -6,7 +6,7 @@
 /*   By: beboccas <beboccas@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 20:50:45 by beboccas          #+#    #+#             */
-/*   Updated: 2024/09/18 15:08:06 by beboccas         ###   ########.fr       */
+/*   Updated: 2024/09/21 03:36:12 by beboccas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ void	draw_hud(t_data *data)
 	char	*coins;
 
 	mlx_set_font(data->game->mlx, data->game->window, "8x13bold");
-	value = ft_itoa(data->player->moves);
-	collected = ft_itoa(data->map->collected);
-	coins = ft_itoa(data->map->coins);
+	value = safe_itoa(data, data->player->moves);
+	collected = safe_itoa(data, data->map->collected);
+	coins = safe_itoa(data, data->map->coins);
 	put_string(data, "Moves: ", 10, 20);
 	put_string(data, value, 60, 20);
 	if (data->map->exit)
