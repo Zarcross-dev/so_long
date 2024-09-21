@@ -6,7 +6,7 @@
 /*   By: beboccas <beboccas@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 16:00:40 by beboccas          #+#    #+#             */
-/*   Updated: 2024/09/17 23:31:57 by beboccas         ###   ########.fr       */
+/*   Updated: 2024/09/19 18:08:29 by beboccas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int ac, char **av)
 {
 	t_data		*data;
 
-	data = malloc(sizeof(t_data));
+	data = ft_calloc(sizeof(t_data), 1);
 	if (!data)
 		merror(data, "Malloc failed\n");
 	if (ac == 2)

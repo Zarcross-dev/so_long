@@ -6,7 +6,7 @@
 /*   By: beboccas <beboccas@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 16:00:37 by beboccas          #+#    #+#             */
-/*   Updated: 2024/09/18 20:47:23 by beboccas         ###   ########.fr       */
+/*   Updated: 2024/09/19 18:08:11 by beboccas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	init_game(t_data *data)
 
 int	init_map(t_data *data)
 {
-	data->map = malloc(sizeof(t_map));
+	data->map = ft_calloc(sizeof(t_map), 1);
 	if (!data->map)
 		return (0);
 	if (!map_size(map_open(data, data->name), data))
@@ -67,13 +67,6 @@ int	init_coins(t_data *data)
 		return (0);
 	if (!get_coins_pos(data))
 		return (0);
-	//print coins pos
-	int i = 0;
-	while (i < data->map->coins + 1)
-	{
-		ft_printf("coin %d: %d %d\n", i, data->coins->x[i], data->coins->y[i]);
-		i++;
-	}
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: beboccas <beboccas@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:23:57 by beboccas          #+#    #+#             */
-/*   Updated: 2024/09/19 03:49:34 by beboccas         ###   ########.fr       */
+/*   Updated: 2024/09/19 18:12:50 by beboccas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,49 +57,36 @@ int	check_rectangle(t_data *data)
 	return (1);
 }
 
-int check_lines(t_data *data)
-{
-	int y;
-
-	y = 0;
-	while (data->map->data[0][y])
-	{
-		if (data->map->data[0][y] != '1')
-			return (0);
-		y++;
-	}
-	y = 0;
-	while (data->map->data[data->map->height - 1][y])
-	{
-		if (data->map->data[data->map->height - 1][y] != '1')
-			return (0);
-		y++;
-	}
-	return (1);
-}
-
 int	check_walls(t_data *data)
-{ 
+{
 	int	x;
+	int	y;
 
 	x = 0;
-	while (data->map->data[x])
+	while (x < data->map->height)
 	{
-		if (data->map->data[x][0] != '1')
-			return (0);
-		if (data->map->data[x][data->map->width - 1] != '1')
-			return (0);
+		y = 0;
+		while (y < data->map->width - 1)
+		{
+			if (data->map->data[0][y] != '1')
+				return (0);
+			if (data->map->data[x][0] != '1')
+				return (0);
+			if (data->map->data[x][data->map->width - 2] != '1')
+				return (0);
+			if (data->map->data[data->map->height - 1][y] != '1')
+				return (0);
+			y++;
+		}
 		x++;
 	}
-	if (!check_lines(data))
-		return (0);
 	return (1);
 }
 
 int	valid_map(t_data *data)
 {
 	if (!check_p_e(data))
-		merror(data, "Error: Map should have only 1 player and exit.\n");
+		merror(data, "Error: Map should have 1 player and 1 exit.\n");
 	if (!check_rectangle(data))
 		merror(data, "Error: Map is not rectangle.\n");
 	if (!check_walls(data))

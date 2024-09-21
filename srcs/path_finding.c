@@ -6,7 +6,7 @@
 /*   By: beboccas <beboccas@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 15:38:51 by beboccas          #+#    #+#             */
-/*   Updated: 2024/09/18 14:57:46 by beboccas         ###   ########.fr       */
+/*   Updated: 2024/09/19 17:01:24 by beboccas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,10 @@ void	print_map(char **temp_map)
 
 int	dfs(char **map, t_point size, t_point start, t_point end)
 {
-	/*print_map(map);
-	ft_printf("start: %d %d\n", start.x, start.y);
-	ft_printf("end: %d %d\n", end.x, end.y);
-	ft_printf("\n");*/
-	
 	if (start.x < 0 || start.y < 0 || start.x >= size.x || start.y >= size.y)
 		return (0);
-	if (map[start.y][start.x] == '1' || map[start.y][start.x] == 'X' || map[start.y][start.x] == 'M')
+	if (map[start.y][start.x] == '1' || map[start.y][start.x] == 'X' \
+		|| map[start.y][start.x] == 'M')
 		return (0);
 	if (start.x == end.x && start.y == end.y)
 		return (1);
@@ -62,7 +58,8 @@ int	verify_map(t_data *data)
 		temp_map = copy_map(data);
 		if (!temp_map)
 			return (0);
-		if (!dfs(temp_map, size, player, (t_point){data->coins->x[i], data->coins->y[i]}))
+		if (!dfs(temp_map, size, player, (t_point){data->coins->x[i], \
+			data->coins->y[i]}))
 		{
 			free_temp_map(temp_map);
 			return (0);

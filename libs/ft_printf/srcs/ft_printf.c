@@ -72,12 +72,3 @@ int	ft_printf(char const *str, ...)
 	va_end(args);
 	return (total_size);
 }
-/*#include <limits.h>
-#include <stdio.h>
-int	main()
-{
-    printf("Error test\n");
-    printf("TEST 1 :\n\n");
-	printf("ft_printf : %d\n", ft_printf(">\001\002\007\v\010\f\r\n<"));
-	printf("expected : %d\n", printf("->\001\002\007\v\010\f\r\n<-"));
-}*/
