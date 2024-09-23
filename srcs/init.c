@@ -6,7 +6,7 @@
 /*   By: beboccas <beboccas@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 16:00:37 by beboccas          #+#    #+#             */
-/*   Updated: 2024/09/19 18:08:11 by beboccas         ###   ########.fr       */
+/*   Updated: 2024/09/22 22:30:33 by beboccas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	init_game(t_data *data)
 	if (!data->game->mlx)
 		return (0);
 	data->game->window = mlx_new_window(data->game->mlx, data->game->x, \
-										data->game->y, "Mein Kraft");
+										data->game->y, "2DCraft");
 	if (!data->game->window)
 		return (0);
 	return (1);

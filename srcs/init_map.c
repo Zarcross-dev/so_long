@@ -6,7 +6,7 @@
 /*   By: beboccas <beboccas@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:23:57 by beboccas          #+#    #+#             */
-/*   Updated: 2024/09/19 18:12:50 by beboccas         ###   ########.fr       */
+/*   Updated: 2024/09/23 05:09:21 by beboccas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,30 @@ int	check_walls(t_data *data)
 	return (1);
 }
 
+int	check_chars(t_data *data)
+{
+	int	x;
+	int	y;
+
+	x = 0;
+	while (data->map->data[x])
+	{
+		y = 0;
+		while (data->map->data[x][y])
+		{
+			if (data->map->data[x][y] != '0' && data->map->data[x][y] != '1' \
+				&& data->map->data[x][y] != 'C' && data->map->data[x][y] != 'E' \
+				&& data->map->data[x][y] != 'P' && data->map->data[x][y] != 'M' \
+				&& data->map->data[x][y] != '\n' \
+				&& data->map->data[x][y] != '\0')
+				return (0);
+			y++;
+		}
+		x++;
+	}
+	return (1);
+}
+
 int	valid_map(t_data *data)
 {
 	if (!check_p_e(data))
@@ -91,5 +115,7 @@ int	valid_map(t_data *data)
 		merror(data, "Error: Map is not rectangle.\n");
 	if (!check_walls(data))
 		merror(data, "Error: Map is not closed by walls.\n");
+	if (!check_chars(data))
+		merror(data, "Error: Map contains invalid characters.\n");
 	return (1);
 }
