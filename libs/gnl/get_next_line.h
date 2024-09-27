@@ -6,7 +6,7 @@
 /*   By: beboccas <beboccas@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 14:13:58 by beboccas          #+#    #+#             */
-/*   Updated: 2024/06/08 14:18:36 by beboccas         ###   ########.fr       */
+/*   Updated: 2024/09/27 15:36:10 by beboccas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ char	*line_reader(int fd, char *line);
 char	*line_extractor(char *line);
 char	*line_remover(char *line);
 char	*get_next_line(int fd);
-char    *ft_strchr_gnl(char *s, int c);
+char	*ft_strchr_gnl(char *s, int c);
 
 #endif //GET_NEXT_LINE_H

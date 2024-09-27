@@ -6,7 +6,7 @@
 /*   By: beboccas <beboccas@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 16:00:55 by beboccas          #+#    #+#             */
-/*   Updated: 2024/09/23 14:10:46 by beboccas         ###   ########.fr       */
+/*   Updated: 2024/09/27 15:35:23 by beboccas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,5 @@ int		free_structs(t_data *data);
 void	update_frame(t_data *data, int frame);
 int		valid_map(t_data *data);
 char	*safe_itoa(t_data *data, int n);
-
 
 #endif // SO_LONG_H
